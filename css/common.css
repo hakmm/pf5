@@ -127,3 +127,8 @@ h5 {
     border: 1px solid #f4f4f4;
     border-radius: 11px;
 }
+
+#title {
+    max-width: 1920px;
+    margin: 0 auto;
+}
