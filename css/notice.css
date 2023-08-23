@@ -1,0 +1,9 @@
+#notice {
+    padding-top: 120px;
+    padding-bottom: 200px;
+}
+
+#notice .wrap div {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f4f4f4
+}

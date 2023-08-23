@@ -1,0 +1,129 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.borderB {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.wrap {
+    max-width: 980px ;
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.padding20 {
+    padding: 20px;
+}
+
+.padT50 {
+    padding-top: 50px;
+}
+
+.padB20 {
+    padding-bottom: 20px;
+}
+
+.marL10 {
+    margin-left: 10px;
+}
+
+.marL30 {
+    margin-left: 30px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+.more {
+    border: 1px solid #e2e2e2;
+    border-radius: 20px;
+    width: 95px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    position: relative;
+}
+
+.btn {
+    font-size: 14px;
+    color: #fff;
+    background: #fb4357;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.star {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../img/movie_star.png);
+    background-size: contain;
+    margin-right: 6px;
+}
+
+.Ticketing {
+    background-image: linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));
+    font-size: 16px;
+    color: #fff;
+    border-radius: 30px;
+    padding: 12px 0 14px;
+    width: 136px;
+    height: 18px;
+    text-align: center;
+    margin-top: 50px;
+    line-height: 18px;
+}
+
+.plus {
+    padding: 2px 15px 3px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.417em;
+    border: 1px solid #f4f4f4;
+    border-radius: 11px;
+}

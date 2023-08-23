@@ -1,0 +1,33 @@
+.popup {
+    position: relative;
+    margin-top:-710px;
+    left: calc((100% - 1000px) / 2);
+    width: 1065px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.popup .right-close {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+}
+
+.popup .close {
+    font-size: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/close.svg);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+.popup video {
+    width: 1000px;
+}

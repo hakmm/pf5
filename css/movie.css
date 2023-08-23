@@ -1,0 +1,132 @@
+#movie {
+    padding-bottom: 50px;
+}
+
+#movie .container, #movie .expect  {
+    width: 600%;
+    overflow: hidden;
+    gap: 32px;
+    margin-top: 20px;
+    counter-reset:movie-chart-counter
+}
+
+#movie .container article, #movie .expect article {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#movie .container article>a::before, #movie .expect article>a::before  {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 234px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+#movie .container article:nth-child(1) > a::before {
+    background-image: url(../img/movie01.jpg);
+}
+
+#movie .container article:nth-child(2) > a::before {
+    background-image: url(../img/movie02.jpg);
+}
+
+#movie .container article:nth-child(3) > a::before {
+    background-image: url(../img/movie03.jpg);
+}
+
+#movie .container article:nth-child(4) > a::before {
+    background-image: url(../img/movie04.jpg);
+}
+
+#movie .container article:nth-child(5) > a::before {
+    background-image: url(../img/movie05.jpg);
+}
+
+#movie .container article:nth-of-type(1)::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/15.svg);
+    position: absolute;
+    right: 0;
+    margin: 10px;
+}
+
+#movie .container article:nth-of-type(2)::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/15.svg);
+    position: absolute;
+    right: 0;
+    margin: 10px;
+}
+
+#movie .container article:nth-of-type(3)::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/all.svg);
+    position: absolute;
+    right: 0;
+    margin: 10px;
+}
+
+#movie .container article .counter, #movie .expect article .counter {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#movie .container article .counter::before, #movie .expect article .counter::before {
+   content:counter(movie-chart-counter);
+   counter-increment:movie-chart-counter; 
+   position:absolute; 
+   left:3px;
+   bottom:96px; 
+   font-weight:400; 
+   font-size:50px; 
+   font-style:italic; 
+   color:#fff; 
+   text-shadow:2px 5px 5px rgba(0, 0, 0, 0.45)
+}
+
+#movie .container article h3, #movie .expect article h3 {
+    line-height: 2.5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 150px;
+    text-align: center;
+}
+
+#movie .container article p, #movie .expect article p {
+    display: flex;
+    align-items: center;
+}
+
+#movie .expect article:nth-child(1) > a::before {
+    background-image: url(../img/movie06.jpg);
+}
+
+#movie .expect article:nth-child(2) > a::before {
+    background-image: url(../img/movie07.jpg);
+}
+
+#movie .expect article:nth-child(3) > a::before {
+    background-image: url(../img/movie08.jpg);
+}
+
+#movie .expect article:nth-child(4) > a::before {
+    background-image: url(../img/movie09.jpg);
+}
+
+#movie .expect article:nth-child(5) > a::before {
+    background-image: url(../img/movie10.jpg);
+}

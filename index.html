@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/movie.css">
+    <link rel="stylesheet" href="css/event.css">
+    <link rel="stylesheet" href="css/special.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="css/notice.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <title>CGV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>
+
+
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    
+    <link rel="stylesheet" href="css/modify.css">
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slide').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll:1
+            });
+
+          $("header div.container .menu li:nth-child(1)").mouseenter(function(){
+            $(".sub-movie").slideDown();
+            $(".sub-movie").css("display","flex");
+            $(".sub-menu>ul").not(".sub-movie").css("display","none");
+          });
+
+          $("header div.container .menu li:nth-child(2)").mouseenter(function(){
+            $(".sub-theater").slideDown();
+            $(".sub-theater").css("display","flex");
+            $(".sub-menu>ul").not(".sub-theater").css("display","none");
+          });
+
+          $("header div.container .menu li:nth-child(3)").mouseenter(function(){
+            $(".sub-ticketing").slideDown();
+            $(".sub-ticketing").css("display","flex");
+            $(".sub-menu>ul").not(".sub-ticketing").css("display","none");
+          });
+
+          $("header div.container .menu li:nth-child(4)").mouseenter(function(){
+            $(".sub-package").slideDown();
+            $(".sub-package").css("display","flex");
+            $(".sub-menu>ul").not(".sub-package").css("display","none");
+          });
+
+          $("header div.container .menu li:nth-child(5)").mouseenter(function(){
+            $(".sub-special").slideDown();
+            $(".sub-special").css("display","flex");
+            $(".sub-menu>ul").not(".sub-special").css("display","none");
+          });
+
+          $("header div.container .menu li:nth-child(6)").mouseenter(function(){
+            $(".sub-discount").slideDown();
+            $(".sub-discount").css("display","flex");
+            $(".sub-menu>ul").not(".sub-discount").css("display","none");
+          });
+
+          $("#title").mouseenter(function(){
+            $(".sub-menu ul").slideUp();
+          });
+
+          $(".popup").hide();
+
+          $(".slick-slide").click(function(){
+            $(this).siblings().find(".popup").hide();
+            return false;
+          });
+
+          $(".slick-track li.slide1 a").click(function(){
+            $(".popup").show();
+            $(this).parents("li").siblings().find(".popup").hide();
+            return false;
+          });
+
+          $(".slick-track li.slide2 a").click(function(){
+            $(".popup").show();
+            $(this).parents("li").siblings().find(".popup").hide();
+            return false;
+          });
+
+          $(".slick-track li.slide3 a").click(function(){
+            $(".popup").show();
+            $(this).parents("li").siblings().find(".popup").hide();
+            return false;
+          });
+
+          $(".close").click(function(){
+            $(".popup").hide();
+            return false;
+          });
+
+          $("#store ul.list li:nth-child(1) a").addClass("box-color");
+
+          $("#store ul.view li:not(:first)").hide();
+            let n;
+
+            $("#store ul.list li a").click(function(){
+                n=$(this).attr('data-n');
+                $("#store .container-sub ul li:nth-child("+n+")").show();
+                $("#store .container-sub ul li:nth-child("+n+")").siblings().hide();
+                $(this).toggleClass("box-color");
+                $(this).parents("li").siblings().find("a").removeClass("box-color");
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단 -->
+    <header>
+        <div class="top wrap flex items-center">
+            <h1>
+                <a href=""><span>CULTUREPLEX</span></a>
+            </h1>
+            <div class="search wrap flex">
+                <select>
+                    <option value="" class="hide">영화 바로가기</option>
+                    <option value="">보호자</option>
+                    <option value="">콘크리트유토피아</option>
+                    <option value="">비공식작전</option>
+                </select>
+                <form action="" class="flex marL30">
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                    <button>검색</button>
+                </form>
+            </div>
+            <div class="flex">
+                <ul class="card">
+                    <li><a href="">현대카드</a></li>
+                </ul>
+                <ul class="login">
+                    <li>
+                        <a href="#">
+                            <img src="img/login.png" alt="로그인">
+                            <span>로그인</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/loginJoin.png" alt="회원가입">
+                            <span>회원가입</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/loginMember.png" alt="마이페이지">
+                            <span>MY CGV</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/loginCustomer.png" alt="고객센터">
+                            <span>고객센터</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container wrap padding20">
+            <ul class="menu flex justify-between">
+                <li>
+                    <a href="">영화</a>
+                </li>
+                <li>
+                    <a href="">극장</a>
+                </li>
+                <li>
+                    <a href="">예매</a>
+                </li>
+                <li>
+                    <a href="">스토어</a>
+                </li>
+                <li>
+                    <a href="">이벤트</a>
+                </li>
+                <li>
+                    <a href="">혜택</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sub">
+            <div class="sub-menu flex wrap">
+                <ul class="sub-movie">
+                    <li>
+                        <a href="">무비차트</a>
+                    </li>
+                    <li>
+                        <a href="">아트하우스</a>
+                    </li>
+                    <li>
+                        <a href="">ICECON</a>
+                    </li>
+                </ul>
+                <ul class="sub-theater">
+                    <li>
+                        <a href="">CGV 극장</a>
+                    </li>
+                    <li>
+                        <a href="">특별관</a>
+                    </li>
+                </ul>
+                <ul class="sub-ticketing">
+                    <li>
+                        <a href="">빠른예매</a>
+                    </li>
+                    <li>
+                        <a href="">상영스케줄</a>
+                    </li>
+                    <li>
+                        <a href="">English Ticketing</a>
+                    </li>
+                    <li>
+                        <a href="">English Schedule</a>
+                    </li>
+                </ul>
+                <ul class="sub-package">
+                    <li>
+                        <a href="">패키지</a>
+                    </li>
+                    <li>
+                        <a href="">영화관람권</a>
+                    </li>
+                    <li>
+                        <a href="">기프트카드</a>
+                    </li>
+                    <li>
+                        <a href="">콤보</a>
+                    </li>
+                    <li>
+                        <a href="">팝콘</a>
+                    </li>
+                    <li>
+                        <a href="">음료</a>
+                    </li>
+                    <li>
+                        <a href="">스낵</a>
+                    </li>
+                    <li>
+                        <a href="">플레이존</a>
+                    </li>
+                    <li>
+                        <a href="">씨네샵</a>
+                    </li>
+                </ul>
+                <ul class="sub-special">
+                    <li>
+                        <a href="">SPECIAL</a>
+                    </li>
+                    <li>
+                        <a href="">영화/예매</a>
+                    </li>
+                    <li>
+                        <a href="">멤버십/CLUB</a>
+                    </li>
+                    <li>
+                        <a href="">CGV 극장별</a>
+                    </li>
+                    <li>
+                        <a href="">제휴할인</a>
+                    </li>
+                    <li>
+                        <a href="">당첨자 발표</a>
+                    </li>
+                    <li>
+                        <a href="">종료된 이벤트</a>
+                    </li>
+                </ul>
+                <ul class="sub-discount">
+                    <li>
+                        <a href="">CGV 할인정보</a>
+                    </li>
+                    <li>
+                        <a href="">CLUB 서비스</a>
+                    </li>
+                    <li>
+                        <a href="">VIP 라운지</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- 타이틀 -->
+    <div id="title">
+        <div class="contents">
+            <div class="contents-slide">
+                <ul class="slide">
+                    <li class="slide1">
+                        <a href="#none">
+                            <img src="img/title01.jpg" data-video="https://caching2.lottecinema.co.kr/lotte_image/2023/A_Man_of_Reason/A_Man_of_Reason_1280720.mp4" alt="보호자">
+                        </a>
+                        <div class="popup">
+                            <div class="right-close">
+                                <a href="" class="close">닫기</a>
+                            </div>
+                            <video muted autoplay loop>
+                                <source src="https://caching2.lottecinema.co.kr/lotte_image/2023/A_Man_of_Reason/A_Man_of_Reason_1280720.mp4">
+                            </video>
+                        </div>
+                    </li>
+                    <li class="slide2">
+                        <a href="#none">
+                            <img src="img/title02.png" data-video="https://caching2.lottecinema.co.kr/lotte_image/2023/Concrete_Utopia/0808/Concrete_Utopia_1280720.mp4" alt="콘크리트유토피아">
+                        </a>
+                        <div class="popup">
+                            <div class="right-close">
+                                <a href="" class="close">닫기</a>
+                            </div>
+                            <video muted autoplay loop>
+                                <source src="https://caching2.lottecinema.co.kr/lotte_image/2023/Concrete_Utopia/0808/Concrete_Utopia_1280720.mp4">
+                            </video>
+                        </div>
+                    </li>
+                    <li class="slide3">
+                        <a href="">
+                            <img src="img/title03.png" data-video="https://caching2.lottecinema.co.kr/lotte_image/2023/Ransomed/Ransomed_1280720.mp4" alt="비공식작전">
+                        </a>
+                        <div class="popup">
+                            <div class="right-close">
+                                <a href="" class="close">닫기</a>
+                            </div>
+                            <video muted autoplay loop>
+                                <source src="https://caching2.lottecinema.co.kr/lotte_image/2023/Ransomed/Ransomed_1280720.mp4">
+                            </video>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 내용 -->
+    <main>
+        <!-- 무비차트 -->
+        <section id="movie">
+            <div class="wrap padT50 padB20 flex justify-between borderB">
+                <h2>무비차트</h2>
+                <a href="" class="more">전체보기</a>
+            </div>
+            <div class="container wrap flex">
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>밀수</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.3 예매율 43.4%</p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>미션 임파서블-데드···</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.7 <span class="marL10">예매율 8.8%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>엘리멘탈</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.8 <span class="marL10">예매율 8.4%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>더 문</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.8 <span class="marL10">예매율 8.0%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>명탐정코난-흑철의···</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.7 <span class="marL10">예매율 6.2%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <div class="counter">
+                        <h3>바비</h3><span clas="block"></span>
+                        <p><span class="star"></span>8.7 <span class="marL10">예매율 4.6%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <div class="counter">
+                        <h3>바비</h3><span clas="block"></span>
+                        <p><span class="star"></span>8.7 <span class="marL10">예매율 4.6%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+            </div>
+            <!-- 상영예정작 -->
+            <div class="wrap padT50 padB20 flex justify-between borderB">
+                <h2>상영예정작</h2>
+                <a href="" class="more">전체보기</a>
+            </div>
+            <div class="expect wrap flex">
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>바비</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.3 예매율 43.4%</p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>콘크리트유토피아</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.7 <span class="marL10">예매율 8.8%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>퀴어 프렌즈</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.8 <span class="marL10">예매율 8.4%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>런닝맨 리벤져스</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.8 <span class="marL10">예매율 8.0%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <a href=""></a>
+                    <div class="counter">
+                        <h3>보호자</h3><span clas="block"></span>
+                        <p><span class="star"></span>9.7 <span class="marL10">예매율 6.2%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <div class="counter">
+                        <h3>바비</h3><span clas="block"></span>
+                        <p><span class="star"></span>8.7 <span class="marL10">예매율 4.6%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+                <article>
+                    <div class="counter">
+                        <h3>바비</h3><span clas="block"></span>
+                        <p><span class="star"></span>8.7 <span class="marL10">예매율 4.6%</span></p>
+                        <a href="" class="btn">예매하기</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- 이벤트 -->
+        <section id="event">
+            <div class="wrap padT50 padB20 flex justify-between borderB">
+                <h2>EVENT</h2>
+                <a href="" class="more">전체보기</a>
+            </div>
+            <div class="container wrap flex">
+                <article>
+                    <a href="">
+                        <div class="img"></div>
+                        <h3>[핑크퐁 시네마 콘서트3]핑크퐁의 무릎 해방 일지</h3>
+                        <p>2023.07.21~2023.08.15</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <div class="img"></div>
+                        <h3>[극장판 슈퍼윙스]여름방학 스페셜 상영회</h3>
+                        <p>2023.07.20~2023.07.30</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <img src="img/event06.png" alt="페이머니카드">
+                        <h3>CGV 최대 28,000원 할인 혜택</h3>
+                        <p>2023.03.06 ~ 2033.03.06</p>
+                    </a>
+                </article>
+            </div>
+            <div class="container-second wrap flex">
+                <article>
+                    <a href="">
+                        <div class="img"></div>
+                        <h3>[바비]현장이벤트</h3>
+                        <p>2023.07.26 ~ 2023.08.01</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <div class="img"></div>
+                        <h3>[밀수] 필름마크</h3>
+                        <p>2023.07.26 ~ 2023.08.10</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <img src="img/event07.png" alt="삼성화재 애니카">
+                        <h3>CGV 10,000 할인권</h3>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <!-- 특별관 -->
+        <section id="special">
+            <div class="wrap padT50 padB20 flex justify-between borderB">
+                <h2>특별관</h2>
+                <a href="" class="more">전체보기</a>
+            </div>
+            <div class="container wrap flex">
+                <div class="contents flex">
+                    <div class="ticket flex">
+                        <a href="" class="img"></a>
+                        <span>
+                            <h4>SUITE CINEMA</h4>
+                            <span>
+                                호텔 스위트룸을 극장 안에 옮긴 듯 독립된 공간<br />
+                                세련된 인테리어로 쾌적한 영화 관람 환경을 선사합니다.<br />
+                                소중한 이들과 특별한 영화 여행을 떠나보세요<br />
+                                <span class="text-center">#호텔 컨셉의 프리미엄관</span>
+                             </span>
+                             <a href="" class="Ticketing">대관문의</a>
+                        </span>
+                    </div>
+                    <div class="ticket flex">
+                        <span>
+                            <h4>CINE & LIVINGROOM</h4>
+                            <span>
+                                내 집 같이 편안하고 세련된 거실의 무드와 감성을 담은 소셜 상영관<br />
+                                거실에 대한 로망을 담은 다양한 테마로 구성된 공간<br />
+                                선명하고 밝게 빛나는 LED스크린이 적용된 새로운 영화 경험
+                                <span class="text-center">#신개념 소셜 상영관</span>
+                            </span>
+                            <a href="" class="Ticketing">대관문의</a>
+                        </span>
+                        <a href="" class="img"></a>
+                    </div>
+                    <div class="ticket flex">
+                        <a href="" class="img"></a>
+                        <span>
+                            <h4>4DX</h4>
+                            <span>
+                                단순한 영화 관람을 넘어 영화 속 주인공이 된 듯한 체험<br />
+                                장면마다 생생함을 극대화시키는 4DX 효과를 통해 영화 몰입<br />
+                                좌석이 상하좌우/앞뒤로 움직이며 현장감을 극대화합니다.
+                                <span class="text-center">#모션시트  #오감체험</span>
+                            </span>
+                            <a href="" class="Ticketing">대관문의</a>
+                        </span>
+                    </div>
+                    <div class="ticket flex">
+                        <span>
+                            <h4>CINE de CHEF</h4>
+                            <span>
+                                최고의 쉐프들이 준비하는 만찬과 함께 영화의 즐거움을 나눔<br />
+                                꿈이 현실로 이루어지는 씨네드쉐프에서 소중한 분들과<br />
+                                함께 최고의 가치를 경험 하십시오.
+                                <span class="text-center">#쉐프가 있는 영화관</span>
+                            </span>
+                            <a href="" class="Ticketing">대관문의</a>
+                        </span>
+                        <a href="" class="img"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="store">
+            <div class="container wrap">
+                <ul class="list flex">
+                    <li>
+                        <a href="#" data-n="1">패키지</a>
+                    </li>
+                    <li>
+                        <a href="#" data-n="2">영화관람권</a>
+                    </li>
+                    <li>
+                        <a href="#" data-n="3">기프트카드</a>
+                    </li>
+                    <a href="" class="more">전체보기</a>
+                </ul>
+                <div class="container-sub">
+                    <ul class="view">
+                        <li>
+                            <div>
+                                <a href="#">
+                                    <img src="img/store01.jpg" alt="마야3">
+                                    <span>마야3: 숲속왕국의 위기 얼리버드 관람권 세트(2매)</span>
+                                    <span>14,000원</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store02.jpg" alt="우리 패키지">
+                                    <span>우리 패키지</span>
+                                    <span>61,000원</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store03.jpg" alt="나랑 너 패키지">
+                                    <span>나랑 너 패키지</span>
+                                    <span>34,000원</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store04.jpg" alt="일반 영화 관람권 1매 + 스몰세트 1개">
+                                    <span>일반 영화 관람권 1매 + 스몰세트 1개</span>
+                                    <span>18,000원</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">
+                                    <img src="img/store05.jpg" alt="CGV 골드클래스">
+                                    <span>CGV 골드클래스</span>
+                                    <span>40,000원</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store06.jpg" alt="CGV 영화관람권">
+                                    <span>CGV 영화관람권</span>
+                                    <span>13,000원</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store07.jpg" alt="4DX관람권">
+                                    <span>4DX관람권</span>
+                                    <span>19,000원</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store08.jpg" alt="CGV 영화관람권">
+                                    <span>IMAX 관람권</span>
+                                    <span>18,000원</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">
+                                    <img src="img/store09.jpg" alt="파코니야 여름을부탁해">
+                                    <span>파코니야 여름을부탁해</span>
+                                    <span>금액충전형</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store10.jpg" alt="파코니의 썸머파티">
+                                    <span>파코니의 썸머파티</span>
+                                    <span>금액충전형</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store11.jpg" alt="PACONNIE A형">
+                                    <span>PACONNIE A형</span>
+                                    <span>금액충전형</span>
+                                </a>
+                                <a href="#">
+                                    <img src="img/store12.png" alt="CJ 기프트카드">
+                                    <span>CJ 기프트카드</span>
+                                    <span>CJ ONE에서 구매</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 공지사항 -->
+        <section id="notice">
+            <div class="wrap">
+                <div class="flex justify-between items-center">
+                    <h5>공지사항</h5>
+                    <a href="">[기타]개인정보처리방침 및 위치기반서비스 이용약관 개정 안내 (8/1 字 시행)</a>
+                    <a href="" class="plus">더보기</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 하단 -->
+    <footer>
+        <div class="wrap">
+            <ul class="flex">
+                <li>
+                    <a href="">회사소개</a>
+                </li>
+                <li>
+                    <a href="">지속가능경영</a>
+                </li>
+                <li>
+                    <a href="">IR</a>
+                </li>
+                <li>
+                    <a href="">채용정보</a>
+                </li>
+                <li>
+                    <a href="">광고/제휴/출점문의</a>
+                </li>
+                <li>
+                    <a href="">이용약관</a>
+                </li>
+                <li>
+                    <a href="">편성기준</a>
+                </li>
+                <li>
+                    <a href="">개인정보처리방침</a>
+                </li>
+                <li>
+                    <a href="">법적고지</a>
+                </li>
+                <li>
+                    <a href="">이메일주소무단수집거부</a>
+                </li>
+                <li>
+                    <a href="">윤리경영</a>
+                </li>
+                <li>
+                    <a href="">사이버감사실</a>
+                </li>
+            </ul>
+            <div class="company">
+                <address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동) · <b>고객센터 : 1544-1122</b><br />
+                대표이사 : 허민회 · 사업자등록번호 : 104-81-45690 · 통신판매업신고번호 : 2017-서울용산-0662 <a href="">사업자정보확인</a></address>
+                <p>호스팅사업자 : CJ올리브네트웍스 · 개인정보보호 책임자 : 조진호 · 대표이메일 : cjcgvmaster@cj.net</p>
+                <p class="copyright">© CJ CGV. All Rights Reserved</p>
+            </div>
+            <div class="familysite">
+                <div class="familysite-wrap">
+                    <select name="" id="">
+                        <option value="" class="hide">계열사 바로가기</option>
+                        <optgroup label="CJ그룹">
+                            <option value="">CJ주식회사</option>
+                        </optgroup>
+                        <optgroup label="식품 &amp; 식품서비스">
+                            <option value="">CJ제일제당</option>
+                            <option value="">CJ푸드빌</option>
+                            <option value="">CJ프레시웨이</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

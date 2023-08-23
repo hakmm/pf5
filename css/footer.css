@@ -1,0 +1,56 @@
+footer .wrap ul {
+    padding: 23px 0;
+    gap: 24px;
+    border-bottom: 1px solid #ebebeb
+}
+
+footer .wrap ul li a {
+    font-size: 12px;
+
+}
+
+footer .wrap ul li a:hover {
+    border-bottom: 1px solid;
+}
+
+footer .wrap .company {
+    margin: 30px 0;
+    font-size: 12px;
+}
+
+footer .wrap .company address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+footer .wrap .company address a {
+    text-decoration: underline;
+}
+
+footer .wrap .company p {
+    line-height: 1.6;
+}
+
+footer .wrap .familysite {
+    position: relative;
+}
+
+footer .wrap .familysite .familysite-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+footer .wrap .familysite .familysite-wrap select {
+    height: 34px;
+    font-size: 12px;
+    color: #666;
+    background-color: transparent;
+    border: 1px solid #d8d8d8;
+    padding: 3px 5px;
+    width: 164px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
