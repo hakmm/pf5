@@ -35,43 +35,14 @@
                 slidesToScroll:1
             });
 
-          $("header div.container .menu li:nth-child(1)").mouseenter(function(){
-            $(".sub-movie").slideDown();
-            $(".sub-movie").css("display","flex");
-            $(".sub-menu>ul").not(".sub-movie").css("display","none");
-          });
+          $("header div.container .menu li").mouseenter(function(){
+                var n = $(this).index()+1;
+                $(".sub-menu ul:nth-child("+n+")").slideDown();
+                $(".sub-menu ul:nth-child("+n+")").css("display","flex");
+                $(".sub-menu>ul").not(".sub-menu ul:nth-child("+n+")").css("display","none");
+            });
 
-          $("header div.container .menu li:nth-child(2)").mouseenter(function(){
-            $(".sub-theater").slideDown();
-            $(".sub-theater").css("display","flex");
-            $(".sub-menu>ul").not(".sub-theater").css("display","none");
-          });
-
-          $("header div.container .menu li:nth-child(3)").mouseenter(function(){
-            $(".sub-ticketing").slideDown();
-            $(".sub-ticketing").css("display","flex");
-            $(".sub-menu>ul").not(".sub-ticketing").css("display","none");
-          });
-
-          $("header div.container .menu li:nth-child(4)").mouseenter(function(){
-            $(".sub-package").slideDown();
-            $(".sub-package").css("display","flex");
-            $(".sub-menu>ul").not(".sub-package").css("display","none");
-          });
-
-          $("header div.container .menu li:nth-child(5)").mouseenter(function(){
-            $(".sub-special").slideDown();
-            $(".sub-special").css("display","flex");
-            $(".sub-menu>ul").not(".sub-special").css("display","none");
-          });
-
-          $("header div.container .menu li:nth-child(6)").mouseenter(function(){
-            $(".sub-discount").slideDown();
-            $(".sub-discount").css("display","flex");
-            $(".sub-menu>ul").not(".sub-discount").css("display","none");
-          });
-
-          $("#title").mouseenter(function(){
+          $(".sub-menu").mouseleave(function(){
             $(".sub-menu ul").slideUp();
           });
 
