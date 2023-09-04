@@ -95,6 +95,9 @@ h5 {
     margin-top: 10px;
 }
 
+.btn:hover {
+    opacity: 0.8;
+}
 
 .star {
     display: block;
