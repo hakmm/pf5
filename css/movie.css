@@ -22,9 +22,14 @@
     width: 170px;
     height: 234px;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     border-radius: 10px;
+    transition: all 1s;
+}
+
+#movie .container article > a:hover:before, #movie .expect article > a:hover:before  {
+    background-size: 110%;
 }
 
 #movie .container article:nth-child(1) > a::before {
