@@ -19,11 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>
 
-
-    <link rel="stylesheet" href="slick/slick.css">
-    <link rel="stylesheet" href="slick/slick-theme.css">
-    <script type="text/javascript" src="js/slick.min.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="css/modify.css">
     
     <script type="text/javascript">
@@ -35,51 +33,73 @@
                 slidesToScroll:1
             });
 
-          $("header div.container .menu li").mouseenter(function(){
+            $("header div.container .menu li").mouseenter(function(){
                 var n = $(this).index()+1;
                 $(".sub-menu ul:nth-child("+n+")").slideDown();
                 $(".sub-menu ul:nth-child("+n+")").css("display","flex");
                 $(".sub-menu>ul").not(".sub-menu ul:nth-child("+n+")").css("display","none");
             });
 
-          $(".sub-menu").mouseleave(function(){
-            $(".sub-menu ul").slideUp();
-          });
+            $(".sub-menu").mouseleave(function(){
+                $(".sub-menu ul").slideUp();
+            });
 
-          $(".popup").hide();
-
-          $(".slick-slide").click(function(){
-            $(this).siblings().find(".popup").hide();
-            return false;
-          });
-
-          $(".slick-track li.slide1 a").click(function(){
-            $(".popup").show();
-            $(this).parents("li").siblings().find(".popup").hide();
-            return false;
-          });
-
-          $(".slick-track li.slide2 a").click(function(){
-            $(".popup").show();
-            $(this).parents("li").siblings().find(".popup").hide();
-            return false;
-          });
-
-          $(".slick-track li.slide3 a").click(function(){
-            $(".popup").show();
-            $(this).parents("li").siblings().find(".popup").hide();
-            return false;
-          });
-
-          $(".close").click(function(){
             $(".popup").hide();
-            return false;
-          });
 
-          $("#store ul.list li:nth-child(1) a").addClass("box-color");
+            $(".slick-slide").click(function(){
+                $(this).siblings().find(".popup").hide();
+                return false;
+            });
 
-          $("#store ul.view li:not(:first)").hide();
-            let n;
+            $(".slick-track li.slide1 a").click(function(){
+                $(".popup").show();
+                $(this).parents("li").siblings().find(".popup").hide();
+                return false;
+            });
+
+            $(".slick-track li.slide2 a").click(function(){
+                $(".popup").show();
+                $(this).parents("li").siblings().find(".popup").hide();
+                return false;
+            });
+
+            $(".slick-track li.slide3 a").click(function(){
+                $(".popup").show();
+                $(this).parents("li").siblings().find(".popup").hide();
+                return false;
+            });
+
+            $(".close").click(function(){
+                $(".popup").hide();
+                return false;
+            });
+
+            $(".special-list li:nth-child(1)").addClass("active");
+
+            $('.special-list a').on({
+                mouseenter:function(e){
+                    var target = e.target;
+                    var idx = $(target).closest('li').index();
+
+                    var arrimgUrl = ["https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png","https://img.cgv.co.kr//Front/Main/2022/0616/16553622935690.png","https://img.cgv.co.kr//Front/Main/2021/1130/16382612660240.png","https://img.cgv.co.kr//Front/Main/2021/1130/16382612660560.png"];
+
+                    $(target).closest('li').addClass('active').siblings('li').removeClass('active');
+                    $('.special-link').attr('href', target.href);
+                    $('.special-link img').attr('src', arrimgUrl[idx]);
+                }
+            });
+
+            $(".special-link").on({
+                click: function () {
+                    var label = $(this).find("img")[0].alt;
+                    gaEventLog('PC_메인', "특별관", label);
+                }
+            });
+
+            $("#store ul.list li:nth-child(1) a").addClass("box-color");
+
+            $("#store ul.view li:not(:first)").hide();
+                let n;
 
             $("#store ul.list li a").click(function(){
                 n=$(this).attr('data-n');
@@ -101,7 +121,7 @@
             </h1>
             <div class="search wrap flex">
                 <select>
-                    <option value="" class="hide">영화 바로가기</option>
+                    <option value="" class="hide">예매영화 바로가기</option>
                     <option value="">보호자</option>
                     <option value="">콘크리트유토피아</option>
                     <option value="">비공식작전</option>
@@ -499,60 +519,25 @@
                 <a href="" class="more">전체보기</a>
             </div>
             <div class="container wrap flex">
-                <div class="contents flex">
-                    <div class="ticket flex">
-                        <a href="" class="img"></a>
-                        <span>
-                            <h4>SUITE CINEMA</h4>
-                            <span>
-                                호텔 스위트룸을 극장 안에 옮긴 듯 독립된 공간<br />
-                                세련된 인테리어로 쾌적한 영화 관람 환경을 선사합니다.<br />
-                                소중한 이들과 특별한 영화 여행을 떠나보세요<br />
-                                <span class="text-center">#호텔 컨셉의 프리미엄관</span>
-                             </span>
-                             <a href="" class="Ticketing">대관문의</a>
-                        </span>
-                    </div>
-                    <div class="ticket flex">
-                        <span>
-                            <h4>CINE & LIVINGROOM</h4>
-                            <span>
-                                내 집 같이 편안하고 세련된 거실의 무드와 감성을 담은 소셜 상영관<br />
-                                거실에 대한 로망을 담은 다양한 테마로 구성된 공간<br />
-                                선명하고 밝게 빛나는 LED스크린이 적용된 새로운 영화 경험
-                                <span class="text-center">#신개념 소셜 상영관</span>
-                            </span>
-                            <a href="" class="Ticketing">대관문의</a>
-                        </span>
-                        <a href="" class="img"></a>
-                    </div>
-                    <div class="ticket flex">
-                        <a href="" class="img"></a>
-                        <span>
-                            <h4>4DX</h4>
-                            <span>
-                                단순한 영화 관람을 넘어 영화 속 주인공이 된 듯한 체험<br />
-                                장면마다 생생함을 극대화시키는 4DX 효과를 통해 영화 몰입<br />
-                                좌석이 상하좌우/앞뒤로 움직이며 현장감을 극대화합니다.
-                                <span class="text-center">#모션시트  #오감체험</span>
-                            </span>
-                            <a href="" class="Ticketing">대관문의</a>
-                        </span>
-                    </div>
-                    <div class="ticket flex">
-                        <span>
-                            <h4>CINE de CHEF</h4>
-                            <span>
-                                최고의 쉐프들이 준비하는 만찬과 함께 영화의 즐거움을 나눔<br />
-                                꿈이 현실로 이루어지는 씨네드쉐프에서 소중한 분들과<br />
-                                함께 최고의 가치를 경험 하십시오.
-                                <span class="text-center">#쉐프가 있는 영화관</span>
-                            </span>
-                            <a href="" class="Ticketing">대관문의</a>
-                        </span>
-                        <a href="" class="img"></a>
-                    </div>
+                <div class="img">
+                    <a href="" class="special-link">
+                        <img src="https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png" alt="SUITE CINEMA">
+                    </a>
                 </div>
+                <ul class="special-list">
+                    <li>
+                        <a href="">SUITE CINEMA<span>#호텔 컨셉의 프리미엄관</span></a>
+                    </li>
+                    <li>
+                        <a href="">CINE & LIVINGROOM <span>#신개념 소셜 상영관</span></a>
+                    </li>
+                    <li>
+                        <a href="">4DX #모션시트 <span>#오감체험</span></a>
+                    </li>
+                    <li>
+                        <a href="">CINE de CHEF <span>#쉐프가 있는 영화관</span></a>
+                    </li>
+                </ul>
             </div>
         </section>
         <section id="store">
