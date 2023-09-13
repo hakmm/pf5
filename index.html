@@ -26,6 +26,26 @@
     
     <script type="text/javascript">
         $(document).ready(function(){
+            $(window).scroll(function(){		
+                if($('body, html').scrollTop() > 0){	
+                    $('.top').addClass("fixed");
+                    $('.top').removeClass("wrap");
+                    $('.top h1 a:nth-child(1)').css("display","none");
+                    $('.top h1 a:nth-child(2)').css("display","block");
+                    $('.login li a span').css("color","#fff");
+                    $('.top select').css("color","#fff");
+                    $('.top select').css("background-color","#ED3124");
+                } else if ($('body, html').scrollTop() < 100) {
+                    $('.top').removeClass("fixed");
+                    $('.top').addClass("wrap");
+                    $('.top h1 a:nth-child(1)').css("display","flex");
+                    $('.top h1 a:nth-child(2)').css("display","none");
+                    $('.login li a span').css("color","#000");
+                    $('.top select').css("color","#666");
+                    $('.top select').css("background-color","#fff");
+                }
+            });
+            
             $('.slide').slick({
                 dots: true,
                 infinite: true,
