@@ -186,3 +186,14 @@ header div.sub div.sub-menu ul li a {
 header div.sub div.sub-menu ul li a:hover {
     border-bottom: 1px solid #ED3124;
 }
+
+/* 헤더 고정  */
+.fixed {
+    position: fixed;
+    background-color: #ED3124;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
